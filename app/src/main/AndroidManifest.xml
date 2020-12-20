@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimonSaysApp">
-        <activity android:name=".PlayScreenActivity"></activity>
+        <activity android:name=".HighScoresActivity"></activity>
+        <activity android:name=".Level2PlayScreenActivity"></activity>
+        <activity android:name=".Level2Activity" />
+        <activity android:name=".GameOverActivity" />
+        <activity android:name=".PlayScreenActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

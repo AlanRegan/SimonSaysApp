@@ -10,62 +10,74 @@
         android:id="@+id/btnRed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
         android:background="@drawable/style_circular_button_red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnPlay"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnBlue"
+        app:layout_constraintStart_toEndOf="@+id/btnBlue" />
 
     <Button
         android:id="@+id/btnBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="57dp"
         android:background="@drawable/style_circular_button_blue"
-        app:layout_constraintEnd_toStartOf="@+id/btnRed"
-        app:layout_constraintTop_toBottomOf="@+id/btnStart" />
+        app:layout_constraintBottom_toTopOf="@+id/btnStart"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleMain" />
 
     <Button
         android:id="@+id/btnYellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="160dp"
         android:background="@drawable/style_circular_button_yellow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnBlue"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnBlue"
+        app:layout_constraintEnd_toEndOf="@+id/btnBlue"
+        app:layout_constraintStart_toStartOf="@+id/btnGreen" />
 
     <Button
         android:id="@+id/btnGreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="81dp"
         android:background="@drawable/style_circular_button_green"
-        app:layout_constraintEnd_toStartOf="@+id/btnRed"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnYellow"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginEnd="257dp"
         android:onClick="doStart"
         android:text="Start"
-        app:layout_constraintStart_toStartOf="@+id/btnGreen"
-        app:layout_constraintTop_toBottomOf="@+id/btnGreen" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnPlay"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="138dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="70dp"
         android:onClick="doPlay"
         android:text="Play"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnBlue" />
+        app:layout_constraintStart_toEndOf="@+id/btnStart" />
+
+    <TextView
+        android:id="@+id/tvTitleMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="cursive"
+        android:text="Simon"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="48dp"
+        app:layout_constraintStart_toStartOf="@+id/btnYellow"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

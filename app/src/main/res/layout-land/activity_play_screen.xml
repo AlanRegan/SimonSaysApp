@@ -11,120 +11,247 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="X Coordinate"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvLabelSteps2"
-        app:layout_constraintStart_toStartOf="@+id/tvLabel1" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvLabel1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
         android:text="Y Coordinate"
-        app:layout_constraintStart_toStartOf="@+id/tvLabel2"
-        app:layout_constraintTop_toBottomOf="@+id/tvX" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvLabel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="10dp"
         android:text="Z Coordinate"
-        app:layout_constraintBottom_toTopOf="@+id/tvZ"
-        app:layout_constraintEnd_toStartOf="@+id/tvZ" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="4dp"
         android:text="X Value"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tvY"
-        app:layout_constraintTop_toBottomOf="@+id/tvMag" />
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="26dp"
         android:text="Y Value"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tvZ"
-        app:layout_constraintStart_toStartOf="@+id/tvZ" />
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvZ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
         android:text="Z Value"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvSteps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="43dp"
         android:text="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#9C27B0"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tvX"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvMag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
         android:text="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#9C27B0"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tvSteps"
-        app:layout_constraintTop_toBottomOf="@+id/tvSteps" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvLabelSteps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="75dp"
         android:text="Step Count"
-        app:layout_constraintBottom_toTopOf="@+id/tvLabelSteps2"
-        app:layout_constraintEnd_toEndOf="@+id/tvLabel"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvLabelSteps2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="50dp"
         android:text="Magnitude"
-        app:layout_constraintBottom_toTopOf="@+id/tvLabel1"
-        app:layout_constraintEnd_toEndOf="@+id/tvLabel" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/tvSequence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
-        android:layout_marginEnd="94dp"
         android:text="Seq:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvSteps2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvSteps3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvInputSequence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="InputSequence"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="60dp"
+        android:onClick="doCheck"
+        android:text="Check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWinOrLose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="63dp"
+        android:text="winorlose"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_circular_button_red"
+        app:layout_constraintStart_toEndOf="@+id/btnGreen"
+        app:layout_constraintTop_toBottomOf="@+id/btnGreen" />
+
+    <Button
+        android:id="@+id/btnBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_circular_button_blue"
+        app:layout_constraintStart_toEndOf="@+id/btnYellow"
+        app:layout_constraintTop_toBottomOf="@+id/btnYellow" />
+
+    <Button
+        android:id="@+id/btnYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_circular_button_yellow"
+        app:layout_constraintEnd_toStartOf="@+id/btnGreen"
+        app:layout_constraintTop_toBottomOf="@+id/btnGreen" />
+
+    <Button
+        android:id="@+id/btnGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/style_circular_button_green"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Match the Sequence!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
