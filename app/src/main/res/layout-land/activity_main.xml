@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tvPointsPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginBottom="38dp"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/btnRed"
         android:layout_width="wrap_content"
@@ -31,21 +41,20 @@
         android:id="@+id/btnYellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginEnd="141dp"
         android:background="@drawable/style_circular_button_yellow"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnBlue"
-        app:layout_constraintEnd_toEndOf="@+id/btnBlue"
-        app:layout_constraintStart_toStartOf="@+id/btnGreen" />
+        app:layout_constraintEnd_toEndOf="@+id/btnStart"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
 
     <Button
         android:id="@+id/btnGreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="81dp"
         android:background="@drawable/style_circular_button_green"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnYellow"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/tvRound23" />
 
     <Button
         android:id="@+id/btnStart"
@@ -80,4 +89,34 @@
         android:textSize="48dp"
         app:layout_constraintStart_toStartOf="@+id/btnYellow"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRound23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="20dp"
+        android:text="-"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="32dp"
+        android:text="ROUND"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="POINTS"
+        app:layout_constraintBottom_toTopOf="@+id/tvPointsPS"
+        app:layout_constraintEnd_toEndOf="@+id/tvPointsPS"
+        app:layout_constraintStart_toEndOf="@+id/tvPointsPS" />
 </androidx.constraintlayout.widget.ConstraintLayout>

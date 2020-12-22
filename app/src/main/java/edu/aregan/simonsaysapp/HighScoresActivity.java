@@ -2,10 +2,13 @@ package edu.aregan.simonsaysapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +16,19 @@ import java.util.List;
 public class HighScoresActivity extends AppCompatActivity {
 
     ListView listView;
+    TextView tvUserPoints, tvUsersName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_scores);
 
         listView = findViewById(R.id.lv);
+        tvUserPoints = findViewById(R.id.tvUserPoints);
+        tvUsersName = findViewById(R.id.tvUsersName);
+        String usersname = getIntent().getStringExtra("uname");
+        tvUsersName.setText(String.valueOf(usersname));
+        int pointz = getIntent().getIntExtra("userpoints", -1);
+        tvUserPoints.setText(String.valueOf(pointz));
 
         DatabaseHandler db = new DatabaseHandler(this);
 
@@ -26,14 +36,14 @@ public class HighScoresActivity extends AppCompatActivity {
 
         // Inserting hi scores
         Log.i("Insert: ", "Inserting ..");
-        db.addHiScore(new HiScore("20 OCT 2020", "Frodo", 12));
-        db.addHiScore(new HiScore("28 OCT 2020", "Dobby", 16));
-        db.addHiScore(new HiScore("20 NOV 2020", "DarthV", 20));
-        db.addHiScore(new HiScore("20 NOV 2020", "Bob", 18));
-        db.addHiScore(new HiScore("22 NOV 2020", "Gemma", 22));
-        db.addHiScore(new HiScore("30 NOV 2020", "Joe", 30));
-        db.addHiScore(new HiScore("01 DEC 2020", "DarthV", 22));
-        db.addHiScore(new HiScore("02 DEC 2020", "Gandalf", 132));
+        db.addHiScore(new HiScore("20 OCT 2020", "Ian C", 40));
+        db.addHiScore(new HiScore("28 OCT 2020", "Dobby", 4));
+        db.addHiScore(new HiScore("20 NOV 2020", "DarthV", 4));
+        db.addHiScore(new HiScore("20 NOV 2020", "Bob", 8));
+        db.addHiScore(new HiScore("22 NOV 2020", "Gemma", 4));
+        db.addHiScore(new HiScore("30 NOV 2020", "Joe", 12));
+        db.addHiScore(new HiScore("01 DEC 2020", "DarthV", 4));
+        db.addHiScore(new HiScore("02 DEC 2020", "Gandalf", 8));
 
 
         // Reading all scores
@@ -79,11 +89,10 @@ public class HighScoresActivity extends AppCompatActivity {
         // hiScore contains the 5th highest score
         Log.i("fifth Highest score: ", String.valueOf(hiScore.getScore()) );
 
-        // simple test to add a hi score
-        int myCurrentScore = 40;
-        // if 5th highest score < myCurrentScore, then insert new score
-        if (hiScore.getScore() < myCurrentScore) {
-            db.addHiScore(new HiScore("08 DEC 2020", "Elrond", 40));
+
+        // if 5th highest score < users current score(pointz), then insert new score
+        if (hiScore.getScore() < pointz) {
+            db.addHiScore(new HiScore("08 DEC 2020", usersname, pointz));
         }
 
         Log.i("divider", "====================");
@@ -120,5 +129,10 @@ public class HighScoresActivity extends AppCompatActivity {
                 new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, scoresStr);
         listView.setAdapter(itemsAdapter);
 
+    }
+
+    public void doPlayAgainHS(View view) {
+        Intent MainAct = new Intent(HighScoresActivity.this, MainActivity.class);
+        startActivity(MainAct);
     }
 }

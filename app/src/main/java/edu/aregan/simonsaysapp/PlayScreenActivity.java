@@ -3,6 +3,7 @@ package edu.aregan.simonsaysapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,12 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.os.Handler;
-import android.widget.Toast;
 
-import java.lang.reflect.Array;
-import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class PlayScreenActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -32,12 +29,15 @@ public class PlayScreenActivity extends AppCompatActivity implements SensorEvent
     int counter2 = 0;
     int counter3 = 0;
     int counter4 = 0;
-    int points = 0;
+   // int points = 1;
+    int pointsPS = 4;
+    int roundsPS = 1;
     ArrayList<Integer> inputSequence = new ArrayList<Integer>();
     ArrayList<Integer> seqarray = new ArrayList<>();
 
 
-    TextView tvx, tvy, tvz, tvSteps, tvSteps2, tvSteps3, sequences, tvInputSequence, tvWinOrLose;
+    TextView tvx, tvy, tvz, tvSteps, tvSteps2, tvSteps3, sequences,
+            tvInputSequence, tvWinOrLose, tvUserRound, tvPointsOnPS;
     Button bRed, bBlue, bYellow, bGreen;
     private SensorManager mSensorManager;
     private Sensor mSensor;
@@ -56,6 +56,14 @@ public class PlayScreenActivity extends AppCompatActivity implements SensorEvent
         tvSteps3 = findViewById(R.id.tvSteps3);
         tvInputSequence = findViewById(R.id.tvInputSequence);
         tvWinOrLose = findViewById(R.id.tvWinOrLose);
+
+        // Get round from main activity + display
+        tvUserRound = findViewById(R.id.tvRound23);
+        roundsPS = getIntent().getIntExtra("round", 1);
+        pointsPS = getIntent().getIntExtra("points", 1);
+        tvPointsOnPS = findViewById(R.id.tvPointsOnPS);
+      //  tvUserRound.setText(round);
+
         // Buttons
         bRed = findViewById(R.id.btnRed);
         bBlue = findViewById(R.id.btnBlue);
@@ -194,6 +202,9 @@ public class PlayScreenActivity extends AppCompatActivity implements SensorEvent
             tvInputSequence.setText(inputSequence.toString());
         }
 
+     //   tvUserRound.setText(String.valueOf(roundsPS));
+        tvPointsOnPS.setText(String.valueOf(pointsPS));
+
 
 
 
@@ -230,16 +241,22 @@ public class PlayScreenActivity extends AppCompatActivity implements SensorEvent
     public void doCheck(View view) {
         if (seqarray.toString().equals(inputSequence.toString())){
           //  Toast.makeText(this, "You won", Toast.LENGTH_SHORT).show();
-            tvWinOrLose.setText("WINNER");
-            points++;
-            Intent i= new Intent(PlayScreenActivity.this, Level2Activity.class);
-            i.putExtra("userpoints", points);
-            startActivity(i);
+            tvWinOrLose.setText("Correct!");
+            tvWinOrLose.setTextColor(Color.GREEN);
+            pointsPS = pointsPS + 4;
+            roundsPS = roundsPS + 1;
+            Intent MainActivity = new Intent(PlayScreenActivity.this, MainActivity.class);
+            MainActivity.putExtra("userpoints", pointsPS);
+            MainActivity.putExtra("userrounds", roundsPS);
+            startActivity(MainActivity);
         }
-        else tvWinOrLose.setText("Loser");
+        else if (!seqarray.toString().equals(inputSequence.toString())) {
+            tvWinOrLose.setText("Incorrect!");
+            tvWinOrLose.setTextColor(Color.RED);
         Intent i= new Intent(PlayScreenActivity.this, GameOverActivity.class);
-        i.putExtra("userpoints", points);
+        i.putExtra("userpoints", pointsPS);
         startActivity(i);
+        }
 
 
 

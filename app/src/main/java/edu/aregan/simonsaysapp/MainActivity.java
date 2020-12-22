@@ -6,14 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import java.text.DateFormat;
-import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private final int BLUE = 1;
@@ -23,9 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
     Button bRed, bBlue, bYellow, bGreen, fb;
     int sequenceCount = 4, n = 0;
+    int roundsPS;
+    int pointsPS;
     private Object mutex = new Object();
     int[] gameSequence = new int[4];
     int arrayIndex = 0;
+    TextView tvRound, tvPointsPS;
 
     CountDownTimer ct = new CountDownTimer(6000,  1500) {
 
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         public void onFinish() {
             //mTextField.setText("done!");
             // we now have the game sequence
+
 
             for (int i = 0; i< arrayIndex; i++)
                 Log.d("game sequence", String.valueOf(gameSequence[i]));
@@ -63,10 +64,18 @@ public class MainActivity extends AppCompatActivity {
         bBlue = findViewById(R.id.btnBlue);
         bYellow = findViewById(R.id.btnYellow);
         bGreen = findViewById(R.id.btnGreen);
+        tvRound = findViewById(R.id.tvRound23);
+        tvPointsPS = findViewById(R.id.tvPointsPS);
+
+        roundsPS = getIntent().getIntExtra("userrounds", 1);
+        pointsPS = getIntent().getIntExtra("userpoints", 0);
+
+
     }
 
     public void doStart(View view) {
-
+        tvRound.setText(String.valueOf(roundsPS));
+        tvPointsPS.setText(String.valueOf(pointsPS));
         ct.start();
 //        Intent PlayScreenActivity = new Intent(view.getContext(), PlayScreenActivity.class);
 //        startActivity(PlayScreenActivity);
@@ -151,6 +160,8 @@ public class MainActivity extends AppCompatActivity {
         // Passing sequence to play page
         Intent i= new Intent(MainActivity.this,PlayScreenActivity.class);
         i.putExtra("key",gameSequence);
+        i.putExtra("round", roundsPS);
+        i.putExtra("points", pointsPS);
         startActivity(i);
 
     }
